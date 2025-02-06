@@ -1,0 +1,14 @@
+const zodiacAnimals = [
+    "Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig"
+];
+
+function findZodiac() {
+    const year = document.getElementById('year').value;
+    if (year) {
+        const animalIndex = (year - 4) % 12;  // 4 is the base year for the Chinese Zodiac (Year of the Rat)
+        const zodiacAnimal = zodiacAnimals[animalIndex];
+        document.getElementById('result').innerHTML = `Your Chinese Zodiac animal is: <strong>${zodiacAnimal}</strong>`;
+    } else {
+        document.getElementById('result').innerHTML = 'Please enter a valid year!';
+    }
+}
